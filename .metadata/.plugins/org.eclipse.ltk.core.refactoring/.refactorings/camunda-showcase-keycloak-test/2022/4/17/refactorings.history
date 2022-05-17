@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.example.workflow&apos; to &apos;Camunda-Spring-Boot-Tutorial-Lafayette-main/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;camunda-showcase-keycloak-test&apos;&#x0D;&#x0A;- Destination element: &apos;Camunda-Spring-Boot-Tutorial-Lafayette-main/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;camunda-showcase-keycloak-test/src/main/java/com.example.workflow&apos;" description="Copy package" destination="=Camunda-Spring-Boot-Tutorial-Lafayette-main/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.example.workflow" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1650390091846" version="1.0"/>
+</session>

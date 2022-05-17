@@ -1,0 +1,52 @@
+package de.vonderbeck.bpm.showcase.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import javax.persistence.*;
+import java.io.Serializable;
+
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class EtudiantIngenieur implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)  
+	@Getter @Setter
+	@Column(name="etudiant_ingenieur_cin")
+	private Long cin;
+	@Getter @Setter
+	private String niveau;
+	@Getter @Setter
+	private String nom;
+	@Getter @Setter
+	private String prenom;
+	@Getter @Setter
+	private int nbrAbs;
+	@Getter @Setter
+	private String specialite;
+	@Getter @Setter
+	private int credit;
+	
+	public EtudiantIngenieur(Long valueOf, String niveau2, String string, String string2, int i, String string3,
+			int j) {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "EtudiantIngenieur [ " + cin + " niveau=" + niveau + ", nom=" + nom + ", prenom=" + prenom
+				+ ", nbrAbs=" + nbrAbs + ", specialite=" + specialite + ", credit=" + credit + " ]";
+	}
+	
+	
+	
+}
+

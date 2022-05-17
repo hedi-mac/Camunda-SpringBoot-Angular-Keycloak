@@ -1,0 +1,58 @@
+package de.vonderbeck.bpm.showcase;
+
+
+import org.camunda.bpm.engine.delegate.DelegateExecution;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Service
+public class Printer {
+
+   public void printMessage(DelegateExecution execution) {
+	   LoggerFactory.getLogger(this.getClass()).info("Lisence " + execution.getVariable("date"));
+	   String cin = (String) execution.getVariable("cin");
+	   String niveau = (String) execution.getVariable("niveau");
+	   System.out.println("\n\n\n\n\n  -> "+cin+" "+niveau+" \n\n\n\n");
+   }
+   
+   public void printMessageIng(DelegateExecution execution) {
+	   LoggerFactory.getLogger(this.getClass()).info("Ingenierie " + execution.getVariable("date"));
+	   String cin = (String) execution.getVariable("cin");
+	   String niveau = (String) execution.getVariable("niveau");
+	   String credit = (String) execution.getVariable("credit");
+	   EtudiantIngenieur etudiant = EtudiantIngenieur();
+		private Long cin;
+		@Getter @Setter
+		private String nom;
+		@Getter @Setter
+		private String prenom;
+		@Getter @Setter
+		private int nbrAbs;
+		@Getter @Setter
+		private String specialite;
+		@Getter @Setter
+		private int credit;
+	   
+	   
+	   System.out.println("\n\n\n\n\n  -> "+cin+" "+niveau+" - credit : "+credit+" \n\n\n\n");
+   }
+  
+   
+   public Boolean verifIng(DelegateExecution execution) {
+	   String niveau = (String) execution.getVariable("niveau");
+	   if(niveau.equals("Ingenieurie"))
+		   return true;
+	   return false;
+   }
+   
+   public Boolean verifLis(DelegateExecution execution) {
+	   String niveau = (String) execution.getVariable("niveau");
+	   if(niveau.equals("Lisence"))
+		   return true;
+	   return false;
+   }
+   
+}

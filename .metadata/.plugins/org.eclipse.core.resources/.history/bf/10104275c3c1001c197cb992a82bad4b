@@ -1,0 +1,37 @@
+package de.vonderbeck.bpm.showcase.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.worldcup.app.entity.Joueur;
+import com.worldcup.app.repository.JoueurRepository;
+import com.worldcup.app.responces.MessageResponse;
+
+@Service	
+public class EtudiantIngenieurServiceImpl implements JoueurService {
+	
+	@Autowired
+	JoueurRepository joueurRepository;
+
+    @Transactional
+    @Override
+    public MessageResponse save(Joueur joueur) {
+    	joueurRepository.save(joueur);
+        return new MessageResponse(true,"Succès","Opération réalisée avec succès.");
+    }
+    
+    @Override
+    public List<Joueur> findAll() {
+        return joueurRepository.findAll();
+    }
+
+	@Override
+	public Joueur findById(long id) {
+		return joueurRepository.getById(id);
+	}
+    
+	
+}

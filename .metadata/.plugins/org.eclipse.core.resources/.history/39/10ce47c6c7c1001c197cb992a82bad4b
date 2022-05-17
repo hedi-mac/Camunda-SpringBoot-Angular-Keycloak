@@ -1,0 +1,24 @@
+package de.vonderbeck.bpm.showcase.controller;
+
+import de.vonderbeck.bpm.showcase.service.EtudiantIngenieurService;
+
+@RestController
+@CrossOrigin("*")
+@RequestMapping("etudiant")
+public class EtudiantController {
+	
+	@Autowired
+	EtudiantIngenieurService joueurService;
+	
+	@GetMapping
+    public List<Joueur> findAll() {
+        return joueurService.findAll();
+    }
+	
+	@GetMapping("/{id}")
+    public Joueur findById(@PathVariable Long id) {
+        return joueurService.findById(id);
+    }
+	
+	
+}

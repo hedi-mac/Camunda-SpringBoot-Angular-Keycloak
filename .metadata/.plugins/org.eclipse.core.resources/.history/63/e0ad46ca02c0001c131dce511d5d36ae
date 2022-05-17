@@ -1,0 +1,21 @@
+package de.vonderbeck.bpm.showcase;
+
+@RestController
+@RequestMapping("/api/bpm")
+public class BPMResource {
+
+   private final RuntimeService runtimeService;
+
+   public BPMResource(RuntimeService runtimeService) {
+       this.runtimeService = runtimeService;
+   }
+
+   @PostMapping("/signals")
+   @Timed
+   public ResponseEntity<Void> sendSignal(@RequestBody String signal) {
+       SignalEventReceivedBuilder signalEvent = runtimeService.createSignalEvent(signal);
+       signalEvent.setVariables(ImmutableMap.of("date", LocalDateTime.now()));
+       signalEvent.send();
+       return ResponseEntity.noContent().build();
+   }
+}

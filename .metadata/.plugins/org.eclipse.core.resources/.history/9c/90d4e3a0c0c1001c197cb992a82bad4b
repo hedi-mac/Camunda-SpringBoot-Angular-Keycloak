@@ -1,0 +1,5 @@
+package de.vonderbeck.bpm.showcase.entity;
+
+public class EtudiantIngenieur {
+
+}

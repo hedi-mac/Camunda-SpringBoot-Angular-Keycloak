@@ -1,0 +1,21 @@
+package de.vonderbeck.bpm.showcase.controller;
+@RestController
+@CrossOrigin("*")
+@RequestMapping("api/joueur")
+public class EtudiantController {
+	
+	@Autowired
+	JoueurService joueurService;
+	
+	@GetMapping
+    public List<Joueur> findAll() {
+        return joueurService.findAll();
+    }
+	
+	@GetMapping("/{id}")
+    public Joueur findById(@PathVariable Long id) {
+        return joueurService.findById(id);
+    }
+	
+	
+}

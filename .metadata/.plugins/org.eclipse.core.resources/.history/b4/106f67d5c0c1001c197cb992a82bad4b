@@ -1,0 +1,28 @@
+package de.vonderbeck.bpm.showcase.entity;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class EtudiantIngenieur implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)  
+	@Getter @Setter
+	@Column(name="joueur_id")
+	private Long id;
+	@Getter @Setter
+	private String nom;
+	@Getter @Setter
+	private String prenom;
+	@Getter @Setter
+	private int age;
+	@Getter @Setter
+	private int numero;
+	@Getter @Setter
+	private String poste;
+	
+}
+

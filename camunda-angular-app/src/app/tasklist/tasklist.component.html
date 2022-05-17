@@ -1,0 +1,23 @@
+
+
+
+<div class="ui grid">
+  <div class="six wide column">
+    <div class="list-group">
+      <div *ngFor="let task of tasks">
+        <button type="button" class="list-group-item list-group-item-action list-group-item-secondary" routerLink="/tasklist/{{task.id}}">{{ task.name }}</button>
+      </div>
+    </div>
+  </div>
+  <div class="ten wide column">
+
+    <div *ngIf="taskId != null && questions$ != null">
+      <h2>TASK ID : {{ taskId }}</h2>
+      <app-dynamic-form [taskId]="taskId" [questions]="questions$ | async"></app-dynamic-form>
+    </div>
+
+    <div *ngIf="!taskId">
+      <p>Please select task.</p>
+    </div>
+  </div>
+</div>
